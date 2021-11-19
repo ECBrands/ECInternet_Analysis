@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="ECInternet_Analysis::analysis"
+		     title="Analysis"
+		     translate="title"
+		     module="ECInternet_Analysis"
+		     sortOrder="50"
+		     parent="ECInternet_Base::base"
+		     dependsOnModule="ECInternet_Analysis"
+		     resource="ECInternet_Analysis::analysis" />
+
+		<add id="ECInternet_Analysis::index"
+		     title="Analysis Page"
+		     translate="title"
+		     module="ECInternet_Analysis"
+		     parent="ECInternet_Analysis::analysis"
+		     sortOrder="10"
+		     dependsOnModule="ECInternet_Analysis"
+		     action="analysis/analysis/index"
+		     resource="ECInternet_Analysis::index" />
+	</menu>
+</config>

@@ -1,0 +1,31 @@
+<?php /** @var \ECInternet\Analysis\Block\Adminhtml\Analysis\Index $block */ ?>
+<?php /** @var \Magento\Framework\Escaper $escaper */ ?>
+
+<div class="table-wrapper">
+    <table class="table admin__control-table">
+        <thead>
+        <tr>
+            <th scope="col"><?= $escaper->escapeHtml('Type') ?></th>
+            <th scope="col"><?= $escaper->escapeHtml('Item') ?></th>
+            <th scope="col"><?= $escaper->escapeHtml('Result') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row">
+            <td>Client-Size Optimization</td>
+            <td>CSS Minification</td>
+            <td><?= $block->getCssMinificationResult() ?></td>
+        </tr>
+        <tr class="row">
+            <td>Client-Size Optimization</td>
+            <td>JS Minification</td>
+            <td><?= $block->getJsMinificationResult() ?></td>
+        </tr>
+        <tr class="row">
+            <td>Client-Size Optimization</td>
+            <td>HTML Minification</td>
+            <td><?= $block->getHtmlMinificationResult() ?></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
