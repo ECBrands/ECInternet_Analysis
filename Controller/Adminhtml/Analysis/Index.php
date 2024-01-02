@@ -1,26 +1,28 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright (C) EC Brands Corporation - All Rights Reserved
+ * Contact Licensing@ECInternet.com for use guidelines
  */
+declare(strict_types=1);
 
 namespace ECInternet\Analysis\Controller\Adminhtml\Analysis;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
- * Class Index
+ * Adminhtml Analysis controller
  */
 class Index extends Action implements HttpGetActionInterface
 {
+    const MENU_ID = 'ECInternet_Analysis::index';
+
     /**
      * @var \Magento\Framework\View\Result\PageFactory
      */
-    private $_resultPageFactory;
+    protected $_resultPageFactory;
 
     /**
      * Index constructor.
@@ -43,14 +45,19 @@ class Index extends Action implements HttpGetActionInterface
     }
 
     /**
-     * Load the page defined in /view/adminhtml/layout/analysis_index_index.xml
+     * Load the page defined in view/adminhtml/layout/analysis_index_index.xml
      *
-     * @return Page
+     * @return \Magento\Backend\Model\View\Result\Page
      */
     public function execute()
     {
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_resultPageFactory->create();
-        $resultPage->setActiveMenu("ECInternet_Analysis::index");
+
+        // Active menu
+        $resultPage->setActiveMenu(static::MENU_ID);
+
+        // Page title
         $resultPage->getConfig()->getTitle()->prepend(__('Magento Analysis Tools'));
 
         return $resultPage;

@@ -1,5 +1,16 @@
-<?php /** @var \ECInternet\Analysis\Block\Adminhtml\Analysis\Index $block */ ?>
+<?php
+/**
+ * Copyright (C) EC Brands Corporation - All Rights Reserved
+ * Contact Licensing@ECInternet.com for use guidelines
+ */
+declare(strict_types=1);
+?>
+
+<?php /** @var \Magento\Backend\Block\Template $block */ ?>
 <?php /** @var \Magento\Framework\Escaper $escaper */ ?>
+
+<?php /** @var \ECInternet\Analysis\ViewModel\Analysis\Index $viewModel */ ?>
+<?php $viewModel = $block->getData('view_model'); ?>
 
 <div class="table-wrapper">
     <table class="table admin__control-table">
@@ -14,17 +25,27 @@
         <tr class="row">
             <td>Client-Size Optimization</td>
             <td>CSS Minification</td>
-            <td><?= $block->getCssMinificationResult() ?></td>
+            <td><?= $escaper->escapeHtml($viewModel->getCssMinificationResult()) ?></td>
         </tr>
         <tr class="row">
             <td>Client-Size Optimization</td>
             <td>JS Minification</td>
-            <td><?= $block->getJsMinificationResult() ?></td>
+            <td><?= $escaper->escapeHtml($viewModel->getJsMinificationResult()) ?></td>
         </tr>
         <tr class="row">
             <td>Client-Size Optimization</td>
             <td>HTML Minification</td>
-            <td><?= $block->getHtmlMinificationResult() ?></td>
+            <td><?= $escaper->escapeHtml($viewModel->getHtmlMinificationResult()) ?></td>
+        </tr>
+        <tr class="row">
+            <td>System Setting</td>
+            <td>Admin password lifetime (days)</td>
+            <td><?= $escaper->escapeHtml($viewModel->getPasswordLifetime()) ?></td>
+        </tr>
+        <tr class="row">
+            <td>System Setting</td>
+            <td>Admin forced password update</td>
+            <td></td>
         </tr>
         </tbody>
     </table>

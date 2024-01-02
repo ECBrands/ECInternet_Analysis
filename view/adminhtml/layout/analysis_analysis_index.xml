@@ -3,9 +3,13 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	<body>
 		<referenceContainer name="content">
-			<block class="ECInternet\Analysis\Block\Adminhtml\Analysis\Index"
-			       template="ECInternet_Analysis::analysis/index.phtml"
-			       name="ecinternet_analysis_index_index" />
+			<block name="ecinternet_analysis_index_index"
+			       class="Magento\Backend\Block\Template"
+			       template="ECInternet_Analysis::analysis/index.phtml">
+				<arguments>
+					<argument name="view_model" xsi:type="object">ECInternet\Analysis\ViewModel\Analysis\Index</argument>
+				</arguments>
+			</block>
 		</referenceContainer>
 	</body>
 </page>
