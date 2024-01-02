@@ -4,8 +4,7 @@
 	"description": "Magento2 Analysis Tools",
 	"type": "magento2-module",
 	"require": {
-		"magento/framework": "*",
-		"ecinternet/base": "1.3.2.*"
+		"magento/framework": "*"
 	},
 	"license": [
 		"Proprietary"
