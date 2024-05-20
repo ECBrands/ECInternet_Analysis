@@ -16,9 +16,9 @@ declare(strict_types=1);
     <table class="table admin__control-table">
         <thead>
         <tr>
-            <th scope="col"><?= $escaper->escapeHtml('Type') ?></th>
-            <th scope="col"><?= $escaper->escapeHtml('Item') ?></th>
-            <th scope="col"><?= $escaper->escapeHtml('Result') ?></th>
+            <th scope="col"><?= $escaper->escapeHtml(__('Type')) ?></th>
+            <th scope="col"><?= $escaper->escapeHtml(__('Item')) ?></th>
+            <th scope="col"><?= $escaper->escapeHtml(__('Result')) ?></th>
         </tr>
         </thead>
         <tbody>
@@ -45,6 +45,11 @@ declare(strict_types=1);
         <tr class="row">
             <td>System Setting</td>
             <td>Admin forced password update</td>
+            <td></td>
+        </tr>
+        <tr class="row">
+            <td>Indexer</td>
+            <td>All set to "Reindex on Schedule"</td>
             <td></td>
         </tr>
         </tbody>
