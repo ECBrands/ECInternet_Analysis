@@ -45,7 +45,7 @@ declare(strict_types=1);
         <tr class="row">
             <td>System Setting</td>
             <td>Admin forced password update</td>
-            <td></td>
+            <td><?= $escaper->escapeHtml($viewModel->getForcedPasswordResult()) ?></td>
         </tr>
         <tr class="row">
             <td>Indexer</td>
